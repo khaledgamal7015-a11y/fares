@@ -152,10 +152,11 @@ const Home: React.FC = () => {
               transition={{ duration: 1 }}
             >
               <img
-                src={image}
-                alt={`Hero ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
+  src={image}
+  alt={`Hero ${index + 1}`}
+  className="w-full h-full object-contain sm:object-cover"
+ />
+
               <div className="absolute inset-0 bg-black bg-opacity-50" />
             </motion.div>
           ))}
