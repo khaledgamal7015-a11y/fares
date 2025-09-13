@@ -2,17 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  ChevronRight, 
+import {
+  ChevronRight,
   ChevronLeft,
-  Users, 
-  Calendar, 
+  Users,
+  Calendar,
   CheckCircle,
   ArrowRight,
   ArrowLeft,
-  MessageCircle,
-  Plus,
-  BookOpen
+  MessageCircle
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useCart } from '../contexts/CartContext';
@@ -26,14 +24,13 @@ const Home: React.FC = () => {
   const { addToCart } = useCart();
   const [currentSlide, setCurrentSlide] = useState(0);
 
- const heroImages = [
-  "/1.png.jpg",
-  "/2.png.jpg",
-  "/3.png.jpg",
-  "/4.png.jpg",
-  "/5.png.jpg"
-];
-
+  const heroImages = [
+    "/1.png.jpg",
+    "/2.png.jpg",
+    "/3.png.jpg",
+    "/4.png.jpg",
+    "/5.png.jpg"
+  ];
 
   const stats = [
     {
@@ -60,7 +57,7 @@ const Home: React.FC = () => {
     {
       id: 1,
       title: language.code === 'ar' ? 'نصائح للحفاظ على نظافة المنزل يومياً' : 'Daily Home Cleaning Tips',
-      excerpt: language.code === 'ar' 
+      excerpt: language.code === 'ar'
         ? 'تعرف على أفضل الطرق للحفاظ على نظافة منزلك بشكل يومي دون عناء'
         : 'Learn the best ways to maintain daily home cleanliness effortlessly',
       image: 'https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=500',
@@ -91,7 +88,6 @@ const Home: React.FC = () => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
@@ -103,44 +99,17 @@ const Home: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
   };
 
-  const { ref: aboutRef, inView: aboutInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
-
-  const { ref: statsRef, inView: statsInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
-
-  const { ref: servicesRef, inView: servicesInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
-
-  const { ref: storeRef, inView: storeInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
-
-  const { ref: offersRef, inView: offersInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
-
-  const { ref: articlesRef, inView: articlesInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
-
-  const { ref: contactRef, inView: contactInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
+  const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref: statsRef, inView: statsInView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref: servicesRef, inView: servicesInView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref: storeRef, inView: storeInView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref: offersRef, inView: offersInView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref: articlesRef, inView: articlesInView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref: contactRef, inView: contactInView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
     <div className="min-h-screen">
-      {/* 1. Hero Section with Slider */}
+      {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           {heroImages.map((image, index) => (
@@ -152,11 +121,10 @@ const Home: React.FC = () => {
               transition={{ duration: 1 }}
             >
               <img
-  src={image}
-  alt={`Hero ${index + 1}`}
-  className="w-full h-full object-contain sm:object-cover"
- />
-
+                src={image}
+                alt={`Hero ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-black bg-opacity-50" />
             </motion.div>
           ))}
@@ -165,47 +133,46 @@ const Home: React.FC = () => {
         {/* Hero Content */}
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="absolute inset-0 flex flex-col items-end justify-end text-center text-white px-4 sm:px-6 lg:px-8">
-  <div className="w-full flex flex-col items-center mb-10"> 
-    <motion.h1
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.5 }}
-      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6"
-    >
-      {t('hero.title', '', 'Al-Fares & One')}
-    </motion.h1>
-    <motion.p
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.7 }}
-      className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 px-2"
-    >
-      {t('hero.subtitle', ' ', 'Maintenance & Cleaning - Professional Service with High Quality')}
-    </motion.p>
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.9 }}
-      className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
-    >
-      <Link
-        to="/services"
-        className="bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-blue-700 hover:to-green-600 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto text-center btn-touch"
-      >
-        {t('hero.services', 'اكتشف خدماتنا', 'Discover Our Services')}
-      </Link>
-      <a
-        href="https://wa.me/966534150198"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto text-center btn-touch"
-      >
-        {t('hero.contact', 'تواصل معنا', 'Contact Us')}
-      </a>
-    </motion.div>
-  </div>
-</div>
-
+            <div className="w-full flex flex-col items-center mb-10">
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6"
+              >
+                {t('hero.title', '', 'Al-Fares & One')}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.7 }}
+                className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 px-2"
+              >
+                {t('hero.subtitle', ' ', 'Maintenance & Cleaning - Professional Service with High Quality')}
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.9 }}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
+              >
+                <Link
+                  to="/services"
+                  className="bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-blue-700 hover:to-green-600 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto text-center btn-touch"
+                >
+                  {t('hero.services', 'اكتشف خدماتنا', 'Discover Our Services')}
+                </Link>
+                <a
+                  href="https://wa.me/966534150198"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto text-center btn-touch"
+                >
+                  {t('hero.contact', 'تواصل معنا', 'Contact Us')}
+                </a>
+              </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Slider Controls */}
