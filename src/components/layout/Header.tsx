@@ -91,14 +91,7 @@ const Header: React.FC = () => {
               alt="شعار الموقع" 
               className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto object-contain"
             />
-            <div className="text-right min-w-0">
-              <h1 className="text-xs sm:text-sm lg:text-base xl:text-lg font-bold text-gray-800 leading-tight">
-                {t('company.name', 'مؤسسة الفارس وواحد', 'Al-Fares & One Est.')}
-              </h1>
-              <p className="text-xs sm:text-xs lg:text-sm text-blue-600 leading-tight">
-                {t('company.tagline', 'للصيانة والنظافة', 'Maintenance & Cleaning')}
-              </p>
-            </div>
+            
           </Link>
 
           {/* Desktop Navigation */}

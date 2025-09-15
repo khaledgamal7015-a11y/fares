@@ -110,25 +110,30 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0">
-          {heroImages.map((image, index) => (
-            <motion.div
-              key={index}
-              className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: index === currentSlide ? 1 : 0 }}
-              transition={{ duration: 1 }}
-            >
-              <img
-                src={image}
-                alt={`Hero ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50" />
-            </motion.div>
-          ))}
-        </div>
+<section className="relative w-full h-screen overflow-hidden bg-white">
+
+  <div className="absolute inset-0 flex items-center justify-center">
+    {heroImages.map((image, index) => (
+      <motion.div
+        key={index}
+        className="absolute inset-0 flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: index === currentSlide ? 1 : 0 }}
+        transition={{ duration: 1 }}
+      >
+        <img
+  src={image}
+  alt="Hero"
+  className="w-full h-full object-contain sm:object-cover"
+  style={{ backgroundColor: "#38bdf8" }}
+/>
+
+        <div className="absolute inset-0 bg-black bg-opacity-40" />
+      </motion.div>
+    ))}
+  </div>
+
+
 
         {/* Hero Content */}
         <div className="relative z-10 flex items-center justify-center h-full">
