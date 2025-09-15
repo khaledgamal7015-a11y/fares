@@ -125,7 +125,7 @@ const Home: React.FC = () => {
   src={image}
   alt="Hero"
   className="w-full h-full object-contain sm:object-cover"
-  style={{ backgroundColor: "#38bdf8" }}
+  style={{ backgroundColor: "#05a899" }}
 />
 
         <div className="absolute inset-0 bg-black bg-opacity-40" />
