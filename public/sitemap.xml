@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://www.alfarisservices.com/</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- صفحة من نحن -->
+  <url>
+    <loc>https://www.alfarisservices.com/about</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحة الخدمات -->
+  <url>
+    <loc>https://www.alfarisservices.com/services</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة خدمة تنظيف المنازل -->
+  <url>
+    <loc>https://www.alfarisservices.com/services/home-cleaning</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة خدمة تنظيف الفلل -->
+  <url>
+    <loc>https://www.alfarisservices.com/services/villa-cleaning</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة خدمة تنظيف المكاتب -->
+  <url>
+    <loc>https://www.alfarisservices.com/services/office-cleaning</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة خدمة تنظيف الشقق -->
+  <url>
+    <loc>https://www.alfarisservices.com/services/apartment-cleaning</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة تواصل معنا -->
+  <url>
+    <loc>https://www.alfarisservices.com/contact</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- صفحة الخصوصية -->
+  <url>
+    <loc>https://www.alfarisservices.com/privacy</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- صفحة الشروط والأحكام -->
+  <url>
+    <loc>https://www.alfarisservices.com/terms</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
