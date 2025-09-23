@@ -9,202 +9,226 @@ const ArticleDetail: React.FC = () => {
   const { t, language } = useLanguage();
   
   const articles = [
-    {
-      id: 1,
-      title: language.code === 'ar' ? 'نصائح للحفاظ على نظافة المنزل يومياً' : 'Daily Home Cleaning Tips',
-      excerpt: language.code === 'ar' 
-        ? 'تعرف على أفضل الطرق للحفاظ على نظافة منزلك بشكل يومي دون عناء. نصائح عملية وسهلة التطبيق للحصول على منزل نظيف ومرتب دائماً.'
-        : 'Learn the best ways to maintain daily home cleanliness effortlessly. Practical and easy-to-apply tips for a clean and organized home always.',
-      content: language.code === 'ar' 
-        ? `
-        <h2>أهمية النظافة اليومية للمنزل</h2>
-        <p>النظافة اليومية للمنزل ليست مجرد مظهر جمالي، بل هي ضرورة صحية واجتماعية. المنزل النظيف يعكس شخصية أصحابه ويوفر بيئة صحية آمنة للعائلة.</p>
-        
-        <h3>الفوائد الصحية للنظافة اليومية</h3>
-        <ul>
-          <li>تقليل انتشار البكتيريا والجراثيم</li>
-          <li>تحسين جودة الهواء داخل المنزل</li>
-          <li>الوقاية من الحساسية والأمراض التنفسية</li>
-          <li>خلق بيئة نفسية إيجابية ومريحة</li>
-        </ul>
+   {
+  id: 1,
+  title: language.code === 'ar' 
+    ? 'شركة تنظيف بالقصيم – مؤسسة الفارس وواحد لنظافة وصيانة المنازل' 
+    : 'Cleaning Company in Al-Qassim – Al Fares & One for Cleaning and Maintenance',
+  excerpt: language.code === 'ar'
+    ? 'مؤسسة الفارس وواحد لنظافة وصيانة المنازل بالقصيم تقدم خدمات تنظيف شاملة للمنازل، الفلل، المكاتب، السجاد والمجالس بأعلى جودة وأسعار مناسبة.'
+    : 'Al Fares & One in Al-Qassim offers professional cleaning and maintenance services for homes, villas, offices, carpets, and majlis with top quality and fair prices.',
+  image: '/elaosboa49061.png',
+  alt: language.code === 'ar' 
+    ? 'شركة تنظيف بالقصيم مؤسسة الفارس وواحد' 
+    : 'Cleaning company in Al-Qassim - Al Fares & One',
+  metaDescription: language.code === 'ar'
+    ? 'شركة تنظيف بالقصيم – مؤسسة الفارس وواحد تقدم خدمات تنظيف وصيانة متكاملة تشمل المنازل، الفلل، المكاتب والسجاد باستخدام أدوات حديثة ومواد آمنة بأسعار منافسة.'
+    : 'Cleaning company in Al-Qassim – Al Fares & One provides integrated cleaning and maintenance services for homes, villas, offices, and carpets using modern tools and safe materials at competitive prices.',
+  content: language.code === 'ar'
+    ? `
+      <h1><span style="font-weight: 400;">شركة تنظيف بالقصيم &ndash; مؤسسة الفارس الأفضل في بريدة وجميع مدن القصيم</span></h1>
+      <img src="/001.png" alt="شركة تنظيف بالقصيم مؤسسة الفارس" style="max-width:100%; height:auto; margin:20px 0;" />
+<p><span style="font-weight: 400;">إذا كنت تبحث عن شركة تنظيف بالقصيم متميزة وموثوقة، فإنك ستجد أن الخيارات كثيرة، لكن القليل منها يقدم الجودة والاحترافية التي تبحث عنها. ومن أبرز هذه الشركات </span><a href="https://www.alfarisservices.com/"><span style="font-weight: 400;">مؤسسة الفارس</span></a><span style="font-weight: 400;"> التي استطاعت أن تثبت مكانتها كأفضل شركة تنظيف في بريدة والقصيم بفضل خبرتها الطويلة وخدماتها المتنوعة التي تشمل تنظيف المنازل، الفلل، الكنب، الموكيت، المجالس، بالإضافة إلى خدمات التنظيف بالبخار الحديثة.</span></p>
+<p><span style="font-weight: 400;">تخدم المؤسسة مختلف مدن المنطقة مثل بريدة، عنيزة، الرس، المذنب، مما يجعلها الخيار الأمثل لكل من يريد بيئة نظيفة وصحية بأقل تكلفة.</span></p>
+<p>&nbsp;</p>
+<h2><span style="font-weight: 400;">خدمات مؤسسة الفارس في بريدة والقصيم</span></h2>
+<h3><span style="font-weight: 400;">تنظيف منازل في بريدة والقصيم</span></h3>
+<p><span style="font-weight: 400;">تقدم مؤسسة الفارس خدمة تنظيف المنازل ببريدة وجميع مدن القصيم بأعلى جودة، حيث تشمل الخدمة تنظيف الغرف، الأرضيات، الحمامات، المطابخ، والشبابيك، والأثاث. يتم استخدام مواد تنظيف آمنة على الصحة وفعالة في إزالة الأوساخ.</span></p>
+<h3><span style="font-weight: 400;">تنظيف فلل في بريدة والقصيم</span></h3>
+<p><span style="font-weight: 400;">إذا كنت تمتلك فيلا واسعة وتبحث عن شركة تنظيف فلل ببريدة فإن مؤسسة الفارس هي خيارك الأمثل، حيث توفر فرق متخصصة قادرة على إنجاز العمل في وقت قياسي مع الاهتمام بأدق التفاصيل مثل تنظيف المسابح والحدائق.</span></p>
+<h3><span style="font-weight: 400;">تنظيف كنب في بريدة</span></h3>
+<img src="/002.png" alt="تنظيف الكنب ببريدة والقصيم" style="max-width:100%; height:auto; margin:20px 0;" />
+<p><span style="font-weight: 400;">الكنب من أكثر قطع الأثاث استخداما، لذلك توفر المؤسسة خدمة تنظيف الكنب ببريدة باستخدام أجهزة البخار لإزالة البقع العميقة وتعقيم الأقمشة بشكل كامل.</span></p>
+<h3><span style="font-weight: 400;">تنظيف موكيت وسجاد في بريدة</span></h3>
+<p><span style="font-weight: 400;">مؤسسة الفارس تقدم خدمة تنظيف الموكيت ببريدة لضمان التخلص من الغبار والحشرات الدقيقة. يتم استخدام تقنيات حديثة تحافظ على الألوان والنسيج.</span></p>
+<h3><span style="font-weight: 400;">تنظيف مجالس في بريدة</span></h3>
+<p><span style="font-weight: 400;">المجالس تعتبر الواجهة الرئيسية لأي منزل سعودي، لذلك تهتم مؤسسة الفارس بتقديم خدمة تنظيف المجالس ببريدة بعناية فائقة باستخدام مواد خاصة تمنح الأثاث لمعانا ورائحة عطرة.</span></p>
+<h3><span style="font-weight: 400;">تنظيف بالبخار ببريدة</span></h3>
+<img src="/003.png" alt="تنظيف بالبخار بالقصيم" style="max-width:100%; height:auto; margin:20px 0;" />
+<p><span style="font-weight: 400;">تقدم المؤسسة خدمة تنظيف بالبخار ببريدة، حيث تعتبر هذه الطريقة من أكثر وسائل التنظيف فعالية للتخلص من البكتيريا والجراثيم، خصوصا في المنازل التي تضم أطفالا.</span></p>
+<p>&nbsp;</p>
+<h2><span style="font-weight: 400;">لماذا تعتبر مؤسسة الفارس أفضل شركة تنظيف في بريدة والقصيم؟</span></h2>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">خبرة تزيد عن عشر سنوات في مجال التنظيف.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">تغطية شاملة لجميع مدن القصيم وخاصة بريدة.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">استخدام أحدث الأجهزة ومواد التنظيف المصرح بها.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">فريق مدرب وملتزم بالمواعيد.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">أسعار تنافسية وعروض موسمية.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">مرونة في اختيار الخدمات حسب احتياجات العميل.</span><span style="font-weight: 400;"><br /><br /></span></li>
+</ol>
+<h2><span style="font-weight: 400;">اسعار شركات التنظيف في بريدة والقصيم</span></h2>
+<p><span style="font-weight: 400;">يبحث الكثير من العملاء عن أرخص شركة تنظيف في بريدة دون التنازل عن الجودة. </span><a href="https://www.alfarisservices.com/"><span style="font-weight: 400;">مؤسسة الفارس</span></a><span style="font-weight: 400;"> تقدم أسعارا مميزة تعتمد على:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">مساحة المنزل أو الفيلا.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">عدد الغرف والخدمات المطلوبة.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">نوعية الأثاث والمفروشات.</span><span style="font-weight: 400;"><br /><br /></span></li>
+</ul>
+<p><span style="font-weight: 400;">وبالرغم من تقديم أسعار منخفضة، إلا أن المؤسسة تضمن جودة عالية ونتائج مبهرة.</span></p>
+<p>&nbsp;</p>
+<h2><span style="font-weight: 400;">مؤسسة الفارس &ndash; شركة تنظيف مرخصة ببريدة والقصيم</span></h2>
+<p><span style="font-weight: 400;">من أهم مميزات مؤسسة الفارس أنها شركة تنظيف مرخصة بالقصيم ومعتمدة، مما يمنح العملاء الثقة الكاملة في التعامل معها وضمان الحصول على خدمة احترافية.</span></p>
+<p>&nbsp;</p>
+<h2><span style="font-weight: 400;">نصائح للحفاظ على نظافة المنزل في بريدة</span></h2>
+<p><span style="font-weight: 400;">حتى مع الاعتماد على شركة تنظيف في بريدة مثل مؤسسة الفارس، يمكن اتباع بعض النصائح للحفاظ على نظافة المنزل لفترة أطول:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">تهوية الغرف يوميا.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">تنظيف الأرضيات بشكل دوري.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">إزالة الغبار من الأثاث كل يومين.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">غسل المفروشات بشكل منتظم.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">استخدام المعطرات الطبيعية للحفاظ على رائحة منعشة.</span><span style="font-weight: 400;"><br /><br /></span></li>
+</ul>
+<p>&nbsp;</p>
+<h2><span style="font-weight: 400;">أسئلة شائعة حول شركات التنظيف في بريدة والقصيم</span></h2>
+<h3><span style="font-weight: 400;">هل تقدم مؤسسة الفارس خدماتها في بريدة فقط؟</span></h3>
+<p><span style="font-weight: 400;">لا، تقدم المؤسسة خدماتها في بريدة وجميع مدن القصيم مثل عنيزة، الرس، البكيرية، والمذنب.</span></p>
+<h3><span style="font-weight: 400;">ما هي أفضل خدمة تنظيف بالبخار ببريدة؟</span></h3>
+<p><span style="font-weight: 400;">مؤسسة الفارس تقدم خدمة تنظيف بالبخار بأحدث الأجهزة التي تضمن تعقيم كامل للأثاث.</span></p>
+<h3><span style="font-weight: 400;">هل الأسعار مرتفعة؟</span></h3>
+<p><span style="font-weight: 400;">أسعار مؤسسة الفارس تعتبر من بين أرخص أسعار شركات التنظيف ببريدة مقارنة بالجودة العالية.</span></p>
+<h3><span style="font-weight: 400;">هل الشركة مرخصة؟</span></h3>
+<p><span style="font-weight: 400;">نعم، مؤسسة الفارس شركة مرخصة ومعتمدة في مجال التنظيف بالقصيم.</span></p>
+<p>&nbsp;</p>
+<h2><span style="font-weight: 400;">الخلاصة</span></h2>
+<p><span style="font-weight: 400;">إذا كنت تبحث عن أفضل شركة تنظيف في بريدة أو في أي مدينة بالقصيم، فإن مؤسسة الفارس هي الخيار الأمثل. فهي تجمع بين الخبرة، الجودة، الأسعار المناسبة، والخدمات المتنوعة. سواء كنت تحتاج إلى تنظيف منزل، فيلا، كنب، موكيت، أو مجالس، فإن مؤسسة الفارس توفر لك الحل الأمثل باستخدام أحدث تقنيات التنظيف مثل البخار مع ضمان رضا العملاء.</span></p>
+<p><span style="font-weight: 400;">مع مؤسسة الفارس ستجد أن النظافة أصبحت أسهل وأسرع وأكثر أمانا لك ولأسرتك.</span></p>
+<p><br /><br /><br /></p>
+    `
+    : `
+      <h2>Introduction to Al Fares & One</h2>
+      <p>When it comes to keeping homes, offices, or commercial facilities clean, everyone looks for a trusted company. <strong>Al Fares & One for Cleaning and Maintenance in Al-Qassim</strong> is the first choice for those seeking expertise, quality, and affordable prices.</p>
 
-        <h3>نصائح عملية للتنظيف اليومي</h3>
-        <h4>1. ابدأ بالأساسيات</h4>
-        <p>اجعل ترتيب السرير أول مهمة في يومك. هذا العمل البسيط يعطي شعوراً بالإنجاز ويجعل الغرفة تبدو مرتبة فوراً.</p>
+      <h2>Why Choose Al Fares & One in Al-Qassim?</h2>
+      <h3>Extensive Experience</h3>
+      <p>Years of expertise in cleaning and maintenance services.</p>
 
-        <h4>2. قاعدة الـ 15 دقيقة</h4>
-        <p>خصص 15 دقيقة يومياً لتنظيف سريع لكل غرفة. هذا الوقت كافٍ لترتيب الأشياء وإزالة الغبار السطحي.</p>
+      <h3>Trained Team</h3>
+      <p>Qualified staff using modern cleaning tools and techniques.</p>
 
-        <h4>3. تنظيف فوري للانسكابات</h4>
-        <p>لا تترك أي انسكاب أو بقعة دون تنظيف فوري. كلما طال الوقت، كلما أصبح التنظيف أصعب.</p>
+      <h3>Punctuality</h3>
+      <p>Commitment to deadlines with high accuracy and speed.</p>
 
-        <h4>4. استخدم سلة للأشياء المبعثرة</h4>
-        <p>ضع سلة في كل غرفة لجمع الأشياء المبعثرة، ثم أعدها لأماكنها الصحيحة في نهاية اليوم.</p>
+      <h3>Diverse Services</h3>
+      <p>From homes and villas to offices, carpets, and majlis cleaning.</p>
 
-        <h3>جدول التنظيف الأسبوعي</h3>
-        <p><strong>السبت:</strong> تنظيف الحمامات والمطبخ</p>
-        <p><strong>الأحد:</strong> تنظيف غرف النوم</p>
-        <p><strong>الاثنين:</strong> تنظيف غرفة المعيشة</p>
-        <p><strong>الثلاثاء:</strong> غسيل الملابس</p>
-        <p><strong>الأربعاء:</strong> تنظيف النوافذ والمرايا</p>
-        <p><strong>الخميس:</strong> تنظيف الأرضيات</p>
-        <p><strong>الجمعة:</strong> يوم راحة أو تنظيف خفيف</p>
+      <h3>Safe Materials</h3>
+      <p>Approved materials that protect furniture and family health.</p>
 
-        <h3>أدوات التنظيف الأساسية</h3>
-        <ul>
-          <li>مكنسة كهربائية جيدة</li>
-          <li>ممسحة للأرضيات</li>
-          <li>قطع قماش من الميكروفايبر</li>
-          <li>منظفات متعددة الأغراض</li>
-          <li>قفازات مطاطية</li>
-          <li>فرش تنظيف مختلفة الأحجام</li>
-        </ul>
+      <h2>Services by Al Fares & One</h2>
+      <h3>Home and Villa Cleaning</h3>
+      <p>Comprehensive cleaning for rooms, kitchens, and bathrooms with effective disinfectants.</p>
 
-        <h3>نصائح لتوفير الوقت</h3>
-        <p>• نظف أثناء الطبخ - اغسل الأواني أثناء انتظار الطعام</p>
-        <p>• استخدم منتجات التنظيف متعددة الأغراض</p>
-        <p>• اشرك جميع أفراد العائلة في المهام</p>
-        <p>• استخدم الموسيقى لجعل التنظيف أكثر متعة</p>
+      <h3>Office and Facility Cleaning</h3>
+      <p>Creating a healthy work environment that boosts productivity and comfort.</p>
 
-        <h3>الخلاصة</h3>
-        <p>النظافة اليومية للمنزل ليست مهمة شاقة إذا تم تنظيمها بشكل صحيح. باتباع هذه النصائح البسيطة، ستحصل على منزل نظيف ومرتب دون بذل جهد كبير. تذكر أن الاستمرارية هي المفتاح للنجاح.</p>
-        `
-        : `
-        <h2>The Importance of Daily Home Cleaning</h2>
-        <p>Daily home cleaning is not just about aesthetics, but a health and social necessity. A clean home reflects the personality of its owners and provides a safe, healthy environment for the family.</p>
-        
-        <h3>Health Benefits of Daily Cleaning</h3>
-        <ul>
-          <li>Reducing the spread of bacteria and germs</li>
-          <li>Improving indoor air quality</li>
-          <li>Preventing allergies and respiratory diseases</li>
-          <li>Creating a positive and comfortable psychological environment</li>
-        </ul>
+      <h3>Carpet and Rug Cleaning</h3>
+      <p>Advanced machines to remove stains and odors, making carpets look new.</p>
 
-        <h3>Practical Tips for Daily Cleaning</h3>
-        <h4>1. Start with the Basics</h4>
-        <p>Make bed-making the first task of your day. This simple act gives a sense of accomplishment and makes the room look tidy immediately.</p>
+      <h3>Majlis and Sofa Cleaning</h3>
+      <p>Deep dust and stain removal with disinfection for a healthier space.</p>
 
-        <h4>2. The 15-Minute Rule</h4>
-        <p>Dedicate 15 minutes daily for quick cleaning of each room. This time is sufficient to organize things and remove surface dust.</p>
+      <h3>Glass and Facade Cleaning</h3>
+      <p>High-level expertise in cleaning glass facades with precision.</p>
 
-        <h4>3. Immediate Spill Cleanup</h4>
-        <p>Don't leave any spill or stain without immediate cleaning. The longer you wait, the harder it becomes to clean.</p>
+      <h2>Advantages of Al Fares & One</h2>
+      <h3>Competitive Prices</h3>
+      <p>High-quality services at affordable costs.</p>
 
-        <h4>4. Use a Basket for Scattered Items</h4>
-        <p>Place a basket in each room to collect scattered items, then return them to their proper places at the end of the day.</p>
+      <h3>Quality Follow-Up</h3>
+      <p>Continuous monitoring to ensure customer satisfaction.</p>
 
-        <h3>Weekly Cleaning Schedule</h3>
-        <p><strong>Saturday:</strong> Clean bathrooms and kitchen</p>
-        <p><strong>Sunday:</strong> Clean bedrooms</p>
-        <p><strong>Monday:</strong> Clean living room</p>
-        <p><strong>Tuesday:</strong> Laundry</p>
-        <p><strong>Wednesday:</strong> Clean windows and mirrors</p>
-        <p><strong>Thursday:</strong> Clean floors</p>
-        <p><strong>Friday:</strong> Rest day or light cleaning</p>
+      <h3>Flexible Contracts</h3>
+      <p>Choose between periodic cleaning contracts or one-time services.</p>
 
-        <h3>Essential Cleaning Tools</h3>
-        <ul>
-          <li>Good vacuum cleaner</li>
-          <li>Floor mop</li>
-          <li>Microfiber cloths</li>
-          <li>Multi-purpose cleaners</li>
-          <li>Rubber gloves</li>
-          <li>Various sized cleaning brushes</li>
-        </ul>
+      <h3>Customer Support</h3>
+      <p>Dedicated team available to answer all inquiries anytime.</p>
 
-        <h3>Time-Saving Tips</h3>
-        <p>• Clean while cooking - wash dishes while waiting for food</p>
-        <p>• Use multi-purpose cleaning products</p>
-        <p>• Involve all family members in tasks</p>
-        <p>• Use music to make cleaning more enjoyable</p>
+      <h2>Conclusion</h2>
+      <p>Whether you need one-time cleaning or regular contracts, <strong>Al Fares & One for Cleaning and Maintenance in Al-Qassim</strong> provides the perfect solutions to ensure your comfort and cleanliness of your home or office.</p>
+    `
+},
 
-        <h3>Conclusion</h3>
-        <p>Daily home cleaning is not a daunting task if organized properly. By following these simple tips, you'll have a clean and organized home without much effort. Remember that consistency is the key to success.</p>
-        `,
-      image: 'https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2025-01-15',
-      author: language.code === 'ar' ? 'فريق الفارس وواحد' : 'Al-Fares & One Team',
-      category: language.code === 'ar' ? 'تنظيف المنازل' : 'Home Cleaning',
-      readTime: language.code === 'ar' ? '5 دقائق' : '5 min read'
-    },
+
     {
       id: 2,
-      title: language.code === 'ar' ? 'أهمية تنظيف المكيفات بانتظام' : 'Importance of Regular AC Cleaning',
-      excerpt: language.code === 'ar'
-        ? 'لماذا يجب تنظيف المكيفات دورياً وكيف يؤثر ذلك على صحتك وفاتورة الكهرباء. دليل شامل لصيانة المكيفات وتوفير الطاقة.'
-        : 'Why you should clean ACs regularly and how it affects your health and electricity bill. Complete guide to AC maintenance and energy saving.',
-      content: language.code === 'ar' 
+  title: language.code === 'ar' 
+    ? 'تنظيف المنازل في القصيم — دليلك لأفضل خدمة تنظيف شاملة '
+    : 'Cleaning Company in Al-Qassim – Al Fares & One for Cleaning and Maintenance',
+  excerpt: language.code === 'ar'
+    ? 'مؤسسة الفارس وواحد لنظافة وصيانة المنازل بالقصيم تقدم خدمات تنظيف شاملة للمنازل، الفلل، المكاتب، السجاد والمجالس بأعلى جودة وأسعار مناسبة.'
+    : 'Al Fares & One in Al-Qassim offers professional cleaning and maintenance services for homes, villas, offices, carpets, and majlis with top quality and fair prices.',
+  image: '/www.ahlaabayt.com28-scaled.jpg',
+  alt: language.code === 'ar' 
+    ? 'شركة تنظيف بالقصيم مؤسسة الفارس وواحد' 
+    : 'Cleaning company in Al-Qassim - Al Fares & One',
+  metaDescription: language.code === 'ar'
+  ? 'تنظيف المنازل في القصيم — مؤسسة الفارس تقدم أفضل خدمات تنظيف المنازل والفلل والكنب والموكيت والمجالس ببريدة وجميع مدن القصيم باستخدام أحدث تقنيات البخار وبأسعار تنافسية.'
+  : 'Home cleaning in Al-Qassim — Al Fares provides the best cleaning services for houses, villas, sofas, carpets, and majlis in Buraidah and all Qassim cities using modern steam cleaning techniques at competitive prices.',
+  content: language.code === 'ar'
         ? `
-        <h2>لماذا تنظيف المكيفات ضروري؟</h2>
-        <p>تنظيف المكيفات بانتظام ليس مجرد إجراء صيانة روتيني، بل ضرورة حتمية للحفاظ على صحة الأسرة وتوفير الطاقة. المكيفات غير النظيفة تصبح مصدراً للبكتيريا والفطريات التي تؤثر سلباً على جودة الهواء.</p>
-        
-        <h3>المخاطر الصحية للمكيفات غير النظيفة</h3>
-        <ul>
-          <li>انتشار البكتيريا والفيروسات في الهواء</li>
-          <li>تفاقم أعراض الحساسية والربو</li>
-          <li>رائحة كريهة في المنزل</li>
-          <li>التهابات الجهاز التنفسي</li>
-          <li>متلازمة المباني المريضة</li>
-        </ul>
-
-        <h3>التأثير على فاتورة الكهرباء</h3>
-        <p>المكيفات المتسخة تستهلك طاقة أكثر بنسبة تصل إلى 30% من المكيفات النظيفة. الفلاتر المسدودة تجبر المكيف على العمل بجهد أكبر لتبريد المكان.</p>
-
-        <h4>كيف يحدث ذلك؟</h4>
-        <ul>
-          <li>انسداد الفلاتر يقلل تدفق الهواء</li>
-          <li>تراكم الأتربة على الملفات يقلل كفاءة التبريد</li>
-          <li>المكيف يعمل لفترات أطول لتحقيق درجة الحرارة المطلوبة</li>
-          <li>زيادة الضغط على الضاغط يؤدي لاستهلاك طاقة أكبر</li>
-        </ul>
-
-        <h3>علامات تدل على حاجة المكيف للتنظيف</h3>
-        <p><strong>1. ضعف التبريد:</strong> إذا لاحظت أن المكيف لا يبرد كما السابق</p>
-        <p><strong>2. الروائح الكريهة:</strong> رائحة عفن أو رطوبة عند تشغيل المكيف</p>
-        <p><strong>3. أصوات غريبة:</strong> أصوات غير طبيعية أثناء التشغيل</p>
-        <p><strong>4. زيادة فاتورة الكهرباء:</strong> ارتفاع ملحوظ في استهلاك الطاقة</p>
-        <p><strong>5. تسريب المياه:</strong> تجمع المياه حول الوحدة الداخلية</p>
-
-        <h3>خطوات التنظيف الأساسية</h3>
-        <h4>تنظيف الفلاتر</h4>
-        <p>• أغلق المكيف واتركه لمدة 30 دقيقة</p>
-        <p>• اخرج الفلاتر بحذر</p>
-        <p>• اغسلها بالماء الفاتر والصابون</p>
-        <p>• اتركها تجف تماماً قبل إعادة تركيبها</p>
-
-        <h4>تنظيف الوحدة الخارجية</h4>
-        <p>• أزل الأوراق والأتربة من حول الوحدة</p>
-        <p>• نظف الملفات بفرشاة ناعمة</p>
-        <p>• تأكد من عدم انسداد فتحات التهوية</p>
-
-        <h3>جدول الصيانة الدورية</h3>
-        <p><strong>شهرياً:</strong> تنظيف الفلاتر</p>
-        <p><strong>كل 3 أشهر:</strong> تنظيف الوحدة الداخلية</p>
-        <p><strong>كل 6 أشهر:</strong> صيانة شاملة بواسطة فني متخصص</p>
-        <p><strong>سنوياً:</strong> فحص شامل للنظام</p>
-
-        <h3>نصائح لإطالة عمر المكيف</h3>
-        <ul>
-          <li>لا تشغل المكيف على درجات حرارة منخفضة جداً</li>
-          <li>استخدم مروحة السقف مع المكيف لتوزيع أفضل للهواء</li>
-          <li>أغلق النوافذ والأبواب أثناء التشغيل</li>
-          <li>نظف المنطقة المحيطة بالوحدة الخارجية</li>
-          <li>استخدم ستائر أو عوازل للنوافذ</li>
-        </ul>
-
-        <h3>متى تحتاج لفني متخصص؟</h3>
-        <p>بعض المهام تحتاج لخبرة فني متخصص مثل:</p>
-        <ul>
-          <li>تنظيف الملفات الداخلية</li>
-          <li>فحص مستوى غاز التبريد</li>
-          <li>تنظيف مجاري التصريف</li>
-          <li>فحص الأجزاء الكهربائية</li>
-          <li>معايرة الثرموستات</li>
-        </ul>
-
-        <h3>الخلاصة</h3>
-        <p>تنظيف المكيفات بانتظام استثمار في صحة العائلة وتوفير المال. لا تنتظر حتى تظهر المشاكل، بل اجعل الصيانة الدورية جزءاً من روتين المنزل. مؤسسة الفارس وواحد تقدم خدمات تنظيف وصيانة المكيفات بأعلى معايير الجودة.</p>
+        <h1><span style="font-weight: 400;">تنظيف المنازل في القصيم &mdash; دليلك لأفضل خدمة تنظيف شاملة</span></h1>
+        <img src="/004.png" alt="تنظيف المنازل في القصيم" width="800" height="500" loading="lazy" />
+<p><span style="font-weight: 400;">النظافة أساس الصحة والراحة في أي منزل، ومع ازدحام الحياة وكثرة المسؤوليات اليومية، أصبح من الصعب على الكثير من الأسر القيام بأعمال التنظيف بشكل كامل. وهنا تظهر أهمية البحث عن خدمة تنظيف المنازل في القصيم من خلال شركات متخصصة توفر الوقت والجهد وتضمن الحصول على نتائج احترافية.</span></p>
+<p><span style="font-weight: 400;">من بين أبرز هذه الشركات، تبرز </span><a href="https://www.alfarisservices.com/"><span style="font-weight: 400;">مؤسسة الفارس</span></a><span style="font-weight: 400;"> كخيار مثالي لكل من يبحث عن شركة تنظيف منازل بالقصيم أو شركة تنظيف ببريدة، حيث تقدم المؤسسة خدمات شاملة تغطي جميع مدن المنطقة باستخدام أحدث الأدوات ومواد التنظيف الفعالة والآمنة.</span></p>
+<h1>&nbsp;</h1>
+<h2><span style="font-weight: 400;">خدمات تنظيف المنازل في القصيم مع مؤسسة الفارس</span></h2>
+<img src="/005.png" alt="خدمات تنظيف المنازل بالقصيم" width="800" height="500" loading="lazy" />
+<h3><span style="font-weight: 400;">تنظيف منازل ببريدة</span></h3>
+<p><span style="font-weight: 400;">تقدم مؤسسة الفارس خدمة تنظيف المنازل ببريدة بشكل كامل، حيث يتم تنظيف الغرف، الممرات، المطابخ، الحمامات، الأرضيات، النوافذ، والأثاث. الهدف هو منحك منزلا نظيفا وصحيا بعيدا عن الغبار والأوساخ.</span></p>
+<h3><span style="font-weight: 400;">تنظيف فلل بالقصيم</span></h3>
+<p><span style="font-weight: 400;">إذا كنت تملك فيلا واسعة، فإن خدمة تنظيف الفلل بالقصيم من مؤسسة الفارس تضمن لك الاهتمام بجميع التفاصيل، بداية من الغرف الكبيرة وحتى المسابح والحدائق.</span></p>
+<h3><span style="font-weight: 400;">تنظيف الكنب بالقصيم</span></h3>
+<p><span style="font-weight: 400;">الكنب من أكثر قطع الأثاث تعرضا للأتربة والبقع. مؤسسة الفارس توفر خدمة تنظيف الكنب بالقصيم باستخدام أجهزة البخار والمواد الخاصة لإعادة الكنب كالجديد.</span></p>
+<h3><span style="font-weight: 400;">تنظيف الموكيت والسجاد بالقصيم</span></h3>
+<p><span style="font-weight: 400;">خدمة تنظيف الموكيت بالقصيم تعتبر من الخدمات الأساسية التي تقدمها مؤسسة الفارس، حيث يتم تنظيف الموكيت بطرق متخصصة تزيل البقع وتعيد الألوان لرونقها الأصلي.</span></p>
+<h3><span style="font-weight: 400;">تنظيف المجالس بالقصيم</span></h3>
+<p><span style="font-weight: 400;">المجالس تعكس صورة المنزل أمام الضيوف. لذلك تقدم مؤسسة الفارس خدمة تنظيف المجالس بالقصيم بعناية تامة باستخدام مواد تعقيم ومعطرات مميزة.</span></p>
+<h3><span style="font-weight: 400;">تنظيف بالبخار بالقصيم</span></h3>
+<p><span style="font-weight: 400;">تقنية البخار من أحدث طرق التنظيف وأكثرها فعالية، فهي لا تقتصر على إزالة البقع فقط بل تعمل على التعقيم والتطهير. لذلك تقدم مؤسسة الفارس خدمة تنظيف بالبخار بالقصيم لضمان بيئة صحية وآمنة.</span></p>
+<h2><span style="font-weight: 400;">لماذا تختار مؤسسة الفارس لخدمة تنظيف المنازل في القصيم؟</span></h2>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">خبرة طويلة في مجال التنظيف.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">فريق مدرب ومحترف.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">أسعار تنافسية تناسب مختلف العملاء.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">تغطية شاملة لجميع مدن القصيم وخاصة بريدة.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">الاعتماد على أحدث أجهزة التنظيف بالبخار.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">مرونة في تقديم الخدمات حسب احتياجات كل عميل.</span><span style="font-weight: 400;"><br /><br /></span></li>
+</ul>
+<h2><span style="font-weight: 400;">اسعار تنظيف المنازل في القصيم</span></h2>
+<p><span style="font-weight: 400;">تختلف اسعار تنظيف المنازل بالقصيم حسب عدة عوامل مثل:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">مساحة المنزل أو الفيلا.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">عدد الغرف المراد تنظيفها.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">نوعية الأثاث والمفروشات.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">الخدمات الإضافية المطلوبة مثل تنظيف بالبخار.</span><span style="font-weight: 400;"><br /><br /></span></li>
+</ul>
+<p><span style="font-weight: 400;">لكن ما يميز مؤسسة الفارس هو أنها تقدم أرخص شركة تنظيف بالقصيم دون التنازل عن جودة الخدمة.</span></p>
+<h1>&nbsp;</h1>
+<h2><span style="font-weight: 400;">مؤسسة الفارس &mdash; شركة مرخصة ومعتمدة في القصيم</span></h2>
+<p><span style="font-weight: 400;">من أهم النقاط التي تجعل العملاء يفضلون مؤسسة الفارس أنها </span><a href="https://www.alfarisservices.com/articles/1"><span style="font-weight: 400;">شركة تنظيف مرخصة بالقصيم</span></a><span style="font-weight: 400;">، مما يمنحهم ثقة أكبر في جودة الخدمة والالتزام بالمعايير.</span></p>
+<h1>&nbsp;</h1>
+<h2><span style="font-weight: 400;">نصائح للحفاظ على نظافة المنزل بعد التنظيف</span></h2>
+<p><span style="font-weight: 400;">حتى بعد الاستعانة بخدمات شركة تنظيف المنازل في القصيم، يمكن لبعض الخطوات البسيطة أن تساعد في الحفاظ على نظافة منزلك لفترة أطول:</span></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">تهوية الغرف بشكل يومي.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">تنظيف الأرضيات بانتظام.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">مسح الغبار عن الأثاث كل يومين.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">استخدام المعطرات الطبيعية.</span><span style="font-weight: 400;"><br /><br /></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">التخلص من القمامة يوميا.</span><span style="font-weight: 400;"><br /><br /></span></li>
+</ol>
+<h2><span style="font-weight: 400;">الأسئلة الشائعة عن تنظيف المنازل في القصيم</span></h2>
+<h3><span style="font-weight: 400;">ما هي أفضل شركة تنظيف منازل ببريدة؟</span></h3>
+<p><span style="font-weight: 400;">مؤسسة الفارس تعتبر من أفضل شركات تنظيف المنازل ببريدة بفضل خبراتها وخدماتها المتكاملة.</span></p>
+<h3><span style="font-weight: 400;">هل تقدم مؤسسة الفارس خدمة تنظيف بالبخار؟</span></h3>
+<p><span style="font-weight: 400;">نعم، تقدم خدمة تنظيف بالبخار بالقصيم لتعقيم الأثاث والمفروشات.</span></p>
+<h3><span style="font-weight: 400;">هل الأسعار مناسبة للجميع؟</span></h3>
+<p><span style="font-weight: 400;">أسعار مؤسسة الفارس تناسب جميع العملاء مع وجود عروض و خصومات موسمية.</span></p>
+<h3><span style="font-weight: 400;">هل الخدمة تشمل جميع مدن القصيم؟</span></h3>
+<p><span style="font-weight: 400;">نعم، تقدم المؤسسة خدماتها في بريدة، عنيزة، الرس، المذنب، البكيرية.</span></p>
+<h1>&nbsp;</h1>
+<h2><span style="font-weight: 400;">الخلاصة</span></h2>
+<img src="/006.png" alt="شركة تنظيف منازل بالقصيم مؤسسة الفارس" width="800" height="500" loading="lazy" />
+<p><span style="font-weight: 400;">إن الاعتماد على خدمة تنظيف المنازل في القصيم من خلال مؤسسة الفارس يمنحك راحة البال والوقت الكافي للاهتمام بمهامك اليومية، بينما تضمن أن منزلك نظيف وصحي وآمن لأسرتك. بفضل تنوع خدماتها بين تنظيف المنازل، الفلل، الكنب، الموكيت، والمجالس، بالإضافة إلى استخدام تقنية البخار، استطاعت مؤسسة الفارس أن تكون الخيار الأول لكل من يبحث عن </span><a href="https://www.alfarisservices.com/articles/1"><span style="font-weight: 400;">شركة تنظيف ببريدة</span></a><span style="font-weight: 400;"> أو أي مدينة من مدن القصيم.</span></p>
+<h1><br /><br /></h1>
         `
         : `
         <h2>Why is AC Cleaning Necessary?</h2>
@@ -277,133 +301,81 @@ const ArticleDetail: React.FC = () => {
         <h3>Conclusion</h3>
         <p>Regular AC cleaning is an investment in family health and money savings. Don't wait for problems to appear, make regular maintenance part of your home routine. Al-Fares & One provides AC cleaning and maintenance services with the highest quality standards.</p>
         `,
-      image: 'https://images.pexels.com/photos/8865613/pexels-photo-8865613.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2025-01-12',
-      author: language.code === 'ar' ? 'فريق الفارس وواحد' : 'Al-Fares & One Team',
-      category: language.code === 'ar' ? 'صيانة المكيفات' : 'AC Maintenance',
-      readTime: language.code === 'ar' ? '7 دقائق' : '7 min read'
     },
     {
       id: 3,
-      title: language.code === 'ar' ? 'كيفية اختيار منتجات التنظيف الآمنة' : 'How to Choose Safe Cleaning Products',
-      excerpt: language.code === 'ar'
-        ? 'دليل شامل لاختيار منتجات التنظيف الآمنة للعائلة والبيئة. تعرف على المكونات الطبيعية والمواد الكيميائية الضارة.'
-        : 'Complete guide to choosing family and eco-friendly cleaning products. Learn about natural ingredients and harmful chemicals.',
-      content: language.code === 'ar' 
+  title: language.code === 'ar' 
+    ? 'تنظيف المنازل في القصيم — دليلك لأفضل خدمة تنظيف شاملة '
+    : 'Cleaning Company in Al-Qassim – Al Fares & One for Cleaning and Maintenance',
+  excerpt: language.code === 'ar'
+    ? 'مؤسسة الفارس وواحد لنظافة وصيانة المنازل بالقصيم تقدم خدمات تنظيف شاملة للمنازل، الفلل، المكاتب، السجاد والمجالس بأعلى جودة وأسعار مناسبة.'
+    : 'Al Fares & One in Al-Qassim offers professional cleaning and maintenance services for homes, villas, offices, carpets, and majlis with top quality and fair prices.',
+  image: '/www.ahlaabayt.com28-scaled.jpg',
+  alt: language.code === 'ar' 
+    ? 'شركة تنظيف بالقصيم مؤسسة الفارس وواحد' 
+    : 'Cleaning company in Al-Qassim - Al Fares & One',
+  metaDescription: language.code === 'ar'
+  ? 'تنظيف الفلل والشقق في القصيم — مؤسسة الفارس تقدم خدمات تنظيف احترافية للفلل والشقق ببريدة وجميع مدن القصيم باستخدام أحدث تقنيات البخار ومواد آمنة مع سرعة إنجاز وأسعار تنافسية.'
+  : 'Villa and apartment cleaning in Al-Qassim — Al Fares provides professional cleaning services for villas and apartments in Buraidah and all Qassim cities using modern steam techniques and safe materials with fast execution and competitive prices.',
+
+  content: language.code === 'ar'
         ? `
-        <h2>أهمية اختيار منتجات التنظيف الآمنة</h2>
-        <p>في عالم مليء بالمنتجات الكيميائية، أصبح اختيار منتجات التنظيف الآمنة ضرورة حتمية لحماية صحة الأسرة والبيئة. العديد من منتجات التنظيف التقليدية تحتوي على مواد كيميائية ضارة قد تسبب مشاكل صحية خطيرة.</p>
-        
-        <h3>المخاطر الصحية للمنتجات الكيميائية</h3>
-        <ul>
-          <li>تهيج الجلد والعينين</li>
-          <li>مشاكل في الجهاز التنفسي</li>
-          <li>الحساسية والأكزيما</li>
-          <li>اضطرابات هرمونية</li>
-          <li>مشاكل في الجهاز العصبي</li>
-          <li>زيادة خطر الإصابة بالسرطان</li>
-        </ul>
+        <h1>تنظيف الفلل والشقق في القصيم &mdash; جودة عالية وسرعة في الإنجاز مع مؤسسة الفارس</h1>
+        <img src="/007.png" alt="تنظيف الفلل والشقق في القصيم" width="800" height="500" loading="lazy" />
 
-        <h3>المواد الكيميائية الضارة التي يجب تجنبها</h3>
-        <h4>1. الأمونيا (Ammonia)</h4>
-        <p>توجد في منظفات الزجاج والأرضيات. تسبب تهيج الجهاز التنفسي وحروق الجلد.</p>
+<p>عندما يتعلق الأمر بالنظافة، فإن الفلل والشقق تحتاج إلى عناية خاصة تضمن مظهراً أنيقاً وبيئة صحية خالية من الغبار والجراثيم. في القصيم، برزت <a href="https://www.alfarisservices.com/">مؤسسة الفارس</a> كإحدى الشركات الرائدة التي تقدم خدمات تنظيف متكاملة للفلل والشقق، معتمدة على فريق متخصص وأدوات حديثة وتقنيات متطورة مثل التنظيف بالبخار.</p>
+<p>تغطي خدمات المؤسسة مدينة بريدة وجميع مدن ومحافظات القصيم، لتوفر للعملاء تجربة تنظيف عالية الجودة بسرعة وإنجاز ودقة.</p>
+<h2>أهمية تنظيف الفلل والشقق في القصيم</h2>
+<ul>
+<li>الحفاظ على مظهر مميز للمنزل أو الشقة.<br /><br /></li>
+<li>التخلص من الغبار والجراثيم التي تؤثر على الصحة.<br /><br /></li>
+<li>إطالة عمر الأثاث والمفروشات من خلال التنظيف الدوري.<br /><br /></li>
+<li>توفير بيئة آمنة للأطفال وكبار السن.<br /><br /></li>
+<li>إبراز مظهر فاخر للفلل بما يليق بأصحابها.<br /><br /></li>
+</ul>
+<h2>خدمات مؤسسة الفارس لتنظيف الفلل والشقق بالقصيم</h2>
+<h3>1. تنظيف الفلل في القصيم</h3>
+<img src="/008.png" alt="شركة تنظيف فلل بالقصيم مؤسسة الفارس" width="800" height="500" loading="lazy" />
+<p>مؤسسة الفارس تقدم حلول تنظيف شاملة للفلل، وتشمل:</p>
+<ul>
+<li>تنظيف الأرضيات والحوائط بمواد آمنة.<br /><br /></li>
+<li>تنظيف الكنب والموكيت والمجالس بأحدث أجهزة البخار.<br /><br /></li>
+<li>غسيل وتعقيم المطابخ والحمامات.<br /><br /></li>
+<li>تنظيف النوافذ والزجاج والديكورات.<br /><br /></li>
+<li>العناية بالحدائق والمسابح المحيطة بالفلل.<br /><br /></li>
+</ul>
+<h3>2. تنظيف الشقق في القصيم</h3>
+<p>الخدمات موجهة للشقق الصغيرة والكبيرة وتشمل:</p>
+<ul>
+<li>تنظيف شامل للأثاث والمفروشات.<br /><br /></li>
+<li>إزالة البقع الصعبة من الأرضيات والموكيت.<br /><br /></li>
+<li>تعقيم الحمامات والمطابخ.<br /><br /></li>
+<li>تنظيف المكيفات ومجاري الهواء.<br /><br /></li>
+<li>خدمات مخصصة للشقق المفروشة المؤجرة.<br /><br /></li>
+</ul>
+<h2>لماذا تختار مؤسسة الفارس لتنظيف الفلل والشقق بالقصيم؟</h2>
+<ul>
+<li>خبرة طويلة في مجال التنظيف تغطي بريدة وجميع مدن القصيم.<br /><br /></li>
+<li>فريق محترف ومدرب على أعلى مستوى.<br /><br /></li>
+<li>أدوات وتقنيات حديثة مثل أجهزة البخار والتعقيم.<br /><br /></li>
+<li>أسعار تنافسية تناسب جميع العملاء.<br /><br /></li>
+<li>سرعة في الإنجاز مع الحفاظ على الجودة العالية.<br /><br /></li>
+</ul>
+<h2>أسعار تنظيف الفلل والشقق في القصيم</h2>
+<img src="/009.png" alt="شركة تنظيف شقق بالقصيم مؤسسة الفارس" width="800" height="500" loading="lazy" />
 
-        <h4>2. الكلور (Chlorine)</h4>
-        <p>موجود في المبيضات ومنظفات الحمامات. يسبب مشاكل تنفسية وتهيج الجلد.</p>
-
-        <h4>3. الفورمالديهايد (Formaldehyde)</h4>
-        <p>مادة مسرطنة توجد في بعض منتجات التنظيف والمعطرات.</p>
-
-        <h4>4. الفوسفات (Phosphates)</h4>
-        <p>يضر بالبيئة المائية ويسبب تلوث المياه الجوفية.</p>
-
-        <h4>5. المركبات العضوية المتطايرة (VOCs)</h4>
-        <p>تسبب صداع ودوخة ومشاكل في الجهاز التنفسي.</p>
-
-        <h3>البدائل الطبيعية الآمنة</h3>
-        <h4>الخل الأبيض</h4>
-        <p>• منظف طبيعي ومطهر</p>
-        <p>• يزيل الترسبات الكلسية</p>
-        <p>• آمن تماماً للاستخدام</p>
-        <p>• اقتصادي وفعال</p>
-
-        <h4>صودا الخبز</h4>
-        <p>• يزيل الروائح الكريهة</p>
-        <p>• ينظف البقع الصعبة</p>
-        <p>• آمن للأطفال والحيوانات الأليفة</p>
-        <p>• يمكن استخدامه في جميع أنحاء المنزل</p>
-
-        <h4>عصير الليمون</h4>
-        <p>• مطهر طبيعي</p>
-        <p>• يزيل البقع والترسبات</p>
-        <p>• رائحة منعشة طبيعية</p>
-        <p>• غني بحمض الستريك المنظف</p>
-
-        <h4>زيت شجرة الشاي</h4>
-        <p>• مضاد للبكتيريا والفطريات</p>
-        <p>• طبيعي 100%</p>
-        <p>• فعال ضد العفن</p>
-        <p>• رائحة منعشة</p>
-
-        <h3>وصفات منظفات طبيعية منزلية</h3>
-        <h4>منظف متعدد الأغراض</h4>
-        <p>• كوب من الخل الأبيض</p>
-        <p>• كوب من الماء</p>
-        <p>• ملعقة كبيرة من صودا الخبز</p>
-        <p>• 10 قطرات من زيت عطري (اختياري)</p>
-
-        <h4>منظف الزجاج</h4>
-        <p>• نصف كوب خل أبيض</p>
-        <p>• كوبين من الماء</p>
-        <p>• ربع كوب كحول طبي</p>
-        <p>• قطرتان من سائل الجلي الطبيعي</p>
-
-        <h4>منظف الحمام</h4>
-        <p>• نصف كوب صودا خبز</p>
-        <p>• ربع كوب خل أبيض</p>
-        <p>• ملعقة كبيرة سائل جلي طبيعي</p>
-        <p>• 10 قطرات زيت شجرة الشاي</p>
-
-        <h3>نصائح لقراءة ملصقات المنتجات</h3>
-        <ul>
-          <li>ابحث عن كلمة "طبيعي" أو "عضوي"</li>
-          <li>تجنب المنتجات التي تحتوي على عطور صناعية</li>
-          <li>اختر المنتجات القابلة للتحلل البيولوجي</li>
-          <li>ابحث عن شهادات الأمان البيئي</li>
-          <li>تجنب المنتجات التي لا تذكر مكوناتها</li>
-        </ul>
-
-        <h3>العلامات التجارية الموثوقة</h3>
-        <p>ابحث عن المنتجات التي تحمل شهادات مثل:</p>
-        <ul>
-          <li>ECOCERT</li>
-          <li>Green Seal</li>
-          <li>EPA Safer Choice</li>
-          <li>USDA Organic</li>
-        </ul>
-
-        <h3>نصائح للاستخدام الآمن</h3>
-        <ul>
-          <li>احتفظ بالمنتجات بعيداً عن متناول الأطفال</li>
-          <li>تأكد من التهوية الجيدة أثناء التنظيف</li>
-          <li>لا تخلط منتجات مختلفة أبداً</li>
-          <li>اقرأ التعليمات بعناية</li>
-          <li>استخدم قفازات عند الحاجة</li>
-          <li>اختبر المنتج على منطقة صغيرة أولاً</li>
-        </ul>
-
-        <h3>الفوائد البيئية</h3>
-        <p>استخدام منتجات التنظيف الطبيعية يساهم في:</p>
-        <ul>
-          <li>تقليل تلوث المياه</li>
-          <li>حماية الحياة البحرية</li>
-          <li>تقليل انبعاثات الغازات الضارة</li>
-          <li>الحفاظ على جودة الهواء</li>
-          <li>دعم الاستدامة البيئية</li>
-        </ul>
-
-        <h3>الخلاصة</h3>
-        <p>اختيار منتجات التنظيف الآمنة ليس مجرد اتجاه، بل ضرورة لحماية صحة الأسرة والبيئة. البدائل الطبيعية فعالة وآمنة واقتصادية. ابدأ التغيير اليوم واجعل منزلك مكاناً أكثر صحة وأماناً للجميع.</p>
+<p>توفر <a href="https://www.alfarisservices.com/">مؤسسة الفارس</a> خطط وأسعار مرنة تعتمد على مساحة الفيلا أو الشقة وعدد الغرف، مع إمكانية الحصول على عروض خاصة عند طلب أكثر من خدمة (مثل تنظيف الكنب أو المجالس مع تنظيف شامل للفيلا أو الشقة).</p>
+<h2>الكلمات المفتاحية المستهدفة</h2>
+<ul>
+<li>تنظيف الفلل في القصيم<br /><br /></li>
+<li>تنظيف الشقق في القصيم<br /><br /></li>
+<li>تنظيف المنازل ببريدة<br /><br /></li>
+<li>شركة تنظيف فلل بالقصيم<br /><br /></li>
+<li>شركة تنظيف شقق بالقصيم<br /><br /></li>
+<li>مؤسسة الفارس للتنظيف<br /><br /></li>
+</ul>
+<p>إذا كنت تبحث عن تنظيف الفلل والشقق في القصيم بجودة عالية وسرعة في الإنجاز، فإن <a href="https://www.alfarisservices.com/">مؤسسة الفارس</a> هي خيارك الأمثل. بخبرة واسعة، وأدوات حديثة، وأسعار تنافسية، تضمن المؤسسة لك بيئة نظيفة وصحية تعكس أسلوب حياتك الراقي.</p>
+<h1><br /><br /></h1>
         `
         : `
         <h2>The Importance of Choosing Safe Cleaning Products</h2>
@@ -520,11 +492,7 @@ const ArticleDetail: React.FC = () => {
         <h3>Conclusion</h3>
         <p>Choosing safe cleaning products is not just a trend, but a necessity to protect family health and the environment. Natural alternatives are effective, safe, and economical. Start the change today and make your home a healthier and safer place for everyone.</p>
         `,
-      image: 'https://images.pexels.com/photos/4239086/pexels-photo-4239086.jpeg?auto=compress&cs=tinysrgb&w=800',
-      date: '2025-01-10',
-      author: language.code === 'ar' ? 'فريق الفارس وواحد' : 'Al-Fares & One Team',
-      category: language.code === 'ar' ? 'منتجات التنظيف' : 'Cleaning Products',
-      readTime: language.code === 'ar' ? '8 دقائق' : '8 min read'
+    
     },
     {
       id: 4,

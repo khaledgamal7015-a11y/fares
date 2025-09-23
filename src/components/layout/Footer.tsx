@@ -203,11 +203,22 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Copyright */}
+         {/* Copyright */}
         <div className="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
           <p className="text-gray-400 text-xs sm:text-sm">
             © 2025 {t('company.name', 'مؤسسة الفارس وواحد للصيانة والنظافة', 'Al-Fares & One Maintenance & Cleaning')} - 
             {t('footer.rights', ' جميع الحقوق محفوظة', ' All Rights Reserved')}
+          </p>
+          <p className="text-gray-400 text-xs sm:text-sm mt-2">
+            تم التصميم بواسطة
+            <a
+              href="https://wa.me/966541430116"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:underline ml-1"
+            >
+              رواد الرقمية
+            </a>
           </p>
         </div>
       </div>
