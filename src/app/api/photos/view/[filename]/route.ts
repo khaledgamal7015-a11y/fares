@@ -1,14 +1,15 @@
 import { GridFSBucket } from 'mongodb';
 import clientPromise from '@/lib/mongodb';
 
-export async function GET(request: Request, { params }: any) {
+export async function GET(request: Request, context: unknown) {
 	try {
+		const { params } = context as { params: { filename: string } };
 		const client = await clientPromise;
 		const db = client.db('fares-website');
 		const bucket = new GridFSBucket(db, { bucketName: 'photos' });
 
 		// Decode the filename in case it has special characters
-		const filename = decodeURIComponent(params.filename as string);
+		const filename = decodeURIComponent(params.filename);
 
 		// Check if file exists first
 		const files = await bucket.find({ filename }).toArray();

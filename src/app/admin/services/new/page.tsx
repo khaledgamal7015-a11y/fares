@@ -12,8 +12,9 @@ export default function NewServicePage() {
     description: '',
     price: '',
     category: '',
+    photoFilename: '',
     features: [''],
-    photoFilename: ''
+    active: true
   });
   const [loading, setLoading] = useState(false);
   const router = useRouter();

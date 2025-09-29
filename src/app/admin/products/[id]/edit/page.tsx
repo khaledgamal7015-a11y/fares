@@ -204,16 +204,16 @@ export default function EditProductPage() {
           <input
             type="url"
             id="image"
-            name="image"
-            value={formData.image}
+            name="photoFilename"
+            value={formData.photoFilename}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Enter image URL (optional)"
           />
-          {formData.image && (
+          {formData.photoFilename && (
             <div className="mt-2">
               <img
-                src={formData.image}
+                src={formData.photoFilename}
                 alt="Product preview"
                 className="w-32 h-32 object-cover rounded-lg border"
                 onError={(e) => {

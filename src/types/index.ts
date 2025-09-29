@@ -20,6 +20,7 @@ export interface Service {
   description: string;
   descriptionEn: string;
   image: string;
+  photoFilename?: string;
   features: string[];
   featuresEn: string[];
 }

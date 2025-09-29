@@ -14,6 +14,7 @@ interface Service {
   category?: string;
   features?: string[];
   photoFilename?: string;
+  active?: boolean;
 }
 
 export default function EditServicePage() {
@@ -23,7 +24,8 @@ export default function EditServicePage() {
     price: '',
     category: '',
     features: [''],
-    photoFilename: ''
+    photoFilename: '',
+    active: true
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -43,7 +45,8 @@ export default function EditServicePage() {
             price: service.price ? service.price.toString() : '',
             category: service.category || '',
             features: service.features && service.features.length > 0 ? service.features : [''],
-            photoFilename: service.photoFilename || ''
+            photoFilename: service.photoFilename || '',
+            active: service.active !== false
           });
         } else {
           alert('Service not found');
