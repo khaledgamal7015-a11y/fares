@@ -8,6 +8,7 @@ export const services: Service[] = [
     description: 'خدمة تنظيف شاملة للمنازل تشمل جميع الغرف والمرافق',
     descriptionEn: 'Comprehensive home cleaning service including all rooms and facilities',
     image: '/36226.jpg',
+    photoFilename: '36226.jpg',
     features: [
       'تنظيف جميع الغرف',
       'تنظيف الحمامات والمطابخ',
@@ -30,6 +31,7 @@ export const services: Service[] = [
     description: 'خدمات تنظيف متخصصة للشركات والفنادق والمؤسسات التجارية',
     descriptionEn: 'Specialized cleaning services for companies, hotels and commercial establishments',
     image: '/22.jpg',
+    photoFilename: '22.jpg',
     features: [
       'تنظيف المكاتب والقاعات',
       'تنظيف الممرات والردهات',
