@@ -7,7 +7,20 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     const { id } = await params;
     const client = await clientPromise;
     const db = client.db('fares-website');
-    const service = await db.collection('services').findOne({ _id: new ObjectId(id) });
+    
+    // Try to find by numeric ID first (for seeded data), then by ObjectId
+    let service = await db.collection('services').findOne({ id: parseInt(id) });
+    
+    if (!service) {
+      // If not found by numeric ID, try ObjectId
+      try {
+        service = await db.collection('services').findOne({ _id: new ObjectId(id) });
+      } catch (objectIdError) {
+        // If ObjectId conversion fails, service remains null
+        console.log('ObjectId conversion failed, trying other methods');
+      }
+    }
+    
     if (!service) {
       return NextResponse.json({ error: 'Service not found' }, { status: 404 });
     }
@@ -30,10 +43,23 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
       updatedAt: new Date()
     };
 
-    const result = await db.collection('services').updateOne(
-      { _id: new ObjectId(id) },
+    // Try to update by numeric ID first, then by ObjectId
+    let result = await db.collection('services').updateOne(
+      { id: parseInt(id) },
       { $set: updateData }
     );
+
+    if (result.matchedCount === 0) {
+      // If not found by numeric ID, try ObjectId
+      try {
+        result = await db.collection('services').updateOne(
+          { _id: new ObjectId(id) },
+          { $set: updateData }
+        );
+      } catch (objectIdError) {
+        console.log('ObjectId conversion failed for update');
+      }
+    }
 
     if (result.matchedCount === 0) {
       return NextResponse.json({ error: 'Service not found' }, { status: 404 });
@@ -52,7 +78,17 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
     const client = await clientPromise;
     const db = client.db('fares-website');
 
-    const result = await db.collection('services').deleteOne({ _id: new ObjectId(id) });
+    // Try to delete by numeric ID first, then by ObjectId
+    let result = await db.collection('services').deleteOne({ id: parseInt(id) });
+
+    if (result.deletedCount === 0) {
+      // If not found by numeric ID, try ObjectId
+      try {
+        result = await db.collection('services').deleteOne({ _id: new ObjectId(id) });
+      } catch (objectIdError) {
+        console.log('ObjectId conversion failed for delete');
+      }
+    }
 
     if (result.deletedCount === 0) {
       return NextResponse.json({ error: 'Service not found' }, { status: 404 });

@@ -16,9 +16,17 @@ const ServiceDetail: React.FC = () => {
   useEffect(() => {
     if (id) {
       async function fetchService() {
-        const res = await fetch(`/api/services/${id}`);
-        const data = await res.json();
-        setService(data);
+        try {
+          const res = await fetch(`/api/services/${id}`);
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+          }
+          const data = await res.json();
+          setService(data);
+        } catch (err) {
+          console.error('Error fetching service:', err);
+          setService(null);
+        }
       }
       fetchService();
     }
@@ -26,9 +34,17 @@ const ServiceDetail: React.FC = () => {
 
   useEffect(() => {
     async function fetchServices() {
-      const res = await fetch('/api/services');
-      const data = await res.json();
-      setRelatedServices(data);
+      try {
+        const res = await fetch('/api/services');
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const data = await res.json();
+        setRelatedServices(data);
+      } catch (err) {
+        console.error('Error fetching related services:', err);
+        setRelatedServices([]);
+      }
     }
     fetchServices();
   }, []);
@@ -194,11 +210,22 @@ const ServiceDetail: React.FC = () => {
 
               {/* Service Image */}
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img
-                  src={service.image}
-                  alt={language.code === 'ar' ? service.name : service.nameEn}
-                  className="w-full h-64 object-cover"
-                />
+                {service.photoFilename ? (
+                  <img
+                    src={`/api/photos/view/${service.photoFilename}`}
+                    alt={language.code === 'ar' ? service.name : service.nameEn}
+                    className="w-full h-64 object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-64 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                    <div className="text-white text-center">
+                      <div className="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <span className="text-4xl font-bold">S</span>
+                      </div>
+                      <p className="text-lg opacity-75">{language.code === 'ar' ? service.name : service.nameEn}</p>
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           </div>
@@ -221,24 +248,35 @@ const ServiceDetail: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedServices
-              .filter(s => s._id !== service._id)
+              .filter(s => (s._id || s.id) !== (service._id || service.id))
               .slice(0, 3)
               .map((relatedService, index) => (
                 <motion.div
-                  key={relatedService._id}
+                  key={relatedService._id || relatedService.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
                   className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300"
                 >
-                  <Link href={`/services/${relatedService._id}`}>
+                  <Link href={`/services/${relatedService._id || relatedService.id}`}>
                     <div className="relative overflow-hidden">
-                      <img
-                        src={relatedService.image}
-                        alt={language.code === 'ar' ? relatedService.name : relatedService.nameEn}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
+                      {relatedService.photoFilename ? (
+                        <img
+                          src={`/api/photos/view/${relatedService.photoFilename}`}
+                          alt={language.code === 'ar' ? relatedService.name : relatedService.nameEn}
+                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-48 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                          <div className="text-white text-center">
+                            <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-2">
+                              <span className="text-2xl font-bold">S</span>
+                            </div>
+                            <p className="text-sm opacity-75">{language.code === 'ar' ? relatedService.name : relatedService.nameEn}</p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                     <div className="p-6">
                       <h3 className="text-lg font-bold text-gray-800 mb-2">

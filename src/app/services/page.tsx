@@ -9,15 +9,70 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Services: React.FC = () => {
   const { t, language } = useLanguage();
   const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchServices() {
-      const res = await fetch('/api/services');
-      const data = await res.json();
-      setServices(data);
+      try {
+        setLoading(true);
+        setError(null);
+        const res = await fetch('/api/services');
+        
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        
+        const data = await res.json();
+        
+        // Check if data is an array and not an error object
+        if (Array.isArray(data)) {
+          setServices(data);
+        } else {
+          throw new Error('Invalid data format received from API');
+        }
+      } catch (err) {
+        console.error('Error fetching services:', err);
+        setError(err.message);
+        setServices([]);
+      } finally {
+        setLoading(false);
+      }
     }
     fetchServices();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">{t('loading', 'جاري التحميل...', 'Loading...')}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-600 mb-4">
+            {t('error.title', 'خطأ في التحميل', 'Loading Error')}
+          </h1>
+          <p className="text-gray-600 mb-4">
+            {t('error.message', 'حدث خطأ أثناء تحميل الخدمات', 'An error occurred while loading services')}
+          </p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            {t('error.retry', 'إعادة المحاولة', 'Retry')}
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
@@ -67,9 +122,9 @@ const Services: React.FC = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services && services.length > 0 ? services.map((service, index) => (
               <motion.div
-                key={service._id}
+                key={service._id || service.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -109,7 +164,7 @@ const Services: React.FC = () => {
                       {t('service.features', 'المميزات:', 'Features:')}
                     </h4>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      {(language.code === 'ar' ? service.features : service.featuresEn).slice(0, 3).map((feature, idx) => (
+                      {(language.code === 'ar' ? service.features : service.featuresEn || []).slice(0, 3).map((feature, idx) => (
                         <li key={idx} className="flex items-center">
                           <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
                           {feature}
@@ -119,7 +174,7 @@ const Services: React.FC = () => {
                   </div>
                   
                   <Link
-                    href={`/services/${service._id}`}
+                    href={`/services/${service._id || service.id}`}
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group"
                   >
                     <span>{t('service.readMore', 'اقرأ المزيد', 'Read More')}</span>
@@ -131,7 +186,13 @@ const Services: React.FC = () => {
                   </Link>
                 </div>
               </motion.div>
-            ))}
+            )) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-gray-600 text-lg">
+                  {t('services.noServices', 'لا توجد خدمات متاحة حالياً', 'No services available at the moment')}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
